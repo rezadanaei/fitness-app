@@ -10,7 +10,7 @@ class TrainingProgram extends Model
     use HasFactory;
 
     protected $fillable = [
-        'coach_id', 'student_id', 'program_details', 'date',
+        'coach_id', 'student_id', 'train_title', 'train_number', 'date', 'program_details',
     ];
 
     public function coach()
