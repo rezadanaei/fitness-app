@@ -19,11 +19,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function physicalInfo()
-    {
-        return $this->hasOne(PhysicalInfo::class);
-    }
-
     public function trainingProgramsAsCoach()
     {
         return $this->hasMany(TrainingProgram::class, 'coach_id');
