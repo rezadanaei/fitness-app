@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role', ['student', 'coach']);
+            $table->string('phone')->nullable();
+            $table->string('kodemeli')->nullable();
+            $table->float('weight')->nullable();
+            $table->float('height')->nullable();
             $table->timestamps();
         });
 
