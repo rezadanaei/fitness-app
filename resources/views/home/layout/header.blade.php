@@ -1,7 +1,7 @@
 <header>
     <div class="header-left">
         <div class="profile-button">
-            <a href="{{ route('home') }}" class="profile-link">
+            <a href="{{ route('profile.index') }}" class="profile-link">
                 <img src="/homestyles/assets/profile.png" alt="Profile" class="profile-image">
             </a>
         </div>
