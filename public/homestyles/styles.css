@@ -15,23 +15,23 @@ body {
 }
 
 .form-container h1 {
-    font-size: 50px; 
-    margin-top: 0; 
+    font-size: 50px;
+    margin-top: 0;
     margin-bottom: 20px;
     color: #333;
 }
 
 .logo {
-    position: fixed; 
+    position: fixed;
     top: 20px;
     left: 20px;
-    width: 150px; 
-    height: auto; 
-    cursor: pointer; 
+    width: 150px;
+    height: auto;
+    cursor: pointer;
 }
 
 .logo:hover {
-    opacity: 0.8; 
+    opacity: 0.8;
 }
 
 .container {
@@ -60,7 +60,7 @@ body {
 }
 
 .form-container.login {
-    transform: translateY(-300px) translateX(-100px); 
+    transform: translateY(-300px) translateX(-100px);
 }
 
 .form-header {
@@ -70,20 +70,20 @@ body {
 }
 
 .form-header button {
-    background: #fff; 
-    border: 2px solid #ccc; 
-    border-radius: 20px; 
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 20px;
     font-size: 18px;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s, border 0.3s; 
-    margin: 0 5px; 
+    transition: background 0.3s, color 0.3s, border 0.3s;
+    margin: 0 5px;
 }
 
 .form-header button.active {
-    background: #D96426; 
-    color: #fff; 
-    border-color: #D96426; 
+    background: #D96426;
+    color: #fff;
+    border-color: #D96426;
 }
 
 .form-header button[data-role="teacher"] {
@@ -91,7 +91,7 @@ body {
 }
 
 .form-header button[data-role="student"] {
-    margin-left: 300px; 
+    margin-left: 300px;
 }
 
 h1 {
