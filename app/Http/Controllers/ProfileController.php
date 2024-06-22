@@ -5,64 +5,27 @@ namespace App\Http\Controllers;
 use App\Models\TrainingProgram;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function show()
     {
-        $trainingPrograms = TrainingProgram::all();
-
-        return view('profile.master', compact('trainingPrograms'));
+        $user = Auth::user();
+        $trainingPrograms = TrainingProgram::where('student_id', $user->id)->orderBy('date', 'desc')->get();
+        return view('profile.show', compact('user', 'trainingPrograms'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function edit()
     {
-        //
+        $user = Auth::user();
+        return view('profile.edit', compact('user'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function update(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(User $user)
-    {
-        //
+        $user = Auth::user();
+        $user->update($request->all());
+        return redirect()->route('profile.show')->with('success', 'Profile updated successfully');
     }
 }
