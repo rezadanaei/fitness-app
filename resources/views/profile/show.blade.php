@@ -34,9 +34,9 @@
         @endif
     <div class="right">
         <div class="navbar">
-            <button onclick="window.location.href='{{ route('profile.edit') }}'" class="nav-button">جزئیات
-                پروفایل</button>
-            <button onclick="window.location.href='{{ route('profile.show') }}'" class="nav-button active">تمرین‌ها</button>
+            <a href="{{ route('profile.edit') }}" class="nav-button" style="text-decoration: none">جزئیات
+                پروفایل</a>
+            <a href="{{ route('profile.show') }}" class="nav-button active" style="text-decoration: none">تمرین‌ها</a>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit" class="nav-button">خروج</button>

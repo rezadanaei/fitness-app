@@ -26,21 +26,21 @@
                 <div class="row">
                     <div class="column">
                         <label for="kodemeli">کد ملی</label>
-                        <input value="{{ $user->kodemeli }}" type="text" id="kodemeli" name="kodemeli" placeholder="کد ملی" dir="rtl" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                        <input type="text" id="kodemeli" name="kodemeli" placeholder="کد ملی" dir="rtl" value="{{ $user->kodemeli }}">
                     </div>
                     <div class="column">
                         <label for="phone">شماره تلفن</label>
-                        <input value="{{ $user->phone }}" type="text" id="phone" name="phone" placeholder="شماره تلفن" dir="rtl" maxlength="11" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                        <input type="text" id="phone" name="phone" placeholder="شماره تلفن" dir="rtl" value="{{ $user->phone }}">
                     </div>
                 </div>
                 <div class="row">
                     <div class="column">
                         <label for="height">قد</label>
-                        <input value="{{ $user->height }}" type="number" id="height" name="height" min="130" max="210" placeholder="قد" dir="rtl">
+                        <input value="{{ $user->height }}" type="text" id="height" name="height" placeholder="قد" dir="rtl">
                     </div>
                     <div class="column">
                         <label for="weight">وزن</label>
-                        <input value="{{ $user->weight }}" type="number" id="weight" name="weight" min="40" max="140" placeholder="وزن" dir="rtl">
+                        <input value="{{ $user->weight }}" type="text" id="weight" name="weight" placeholder="وزن" dir="rtl">
                     </div>
                 </div>
                 <input type="submit" value="ارسال">
@@ -49,8 +49,8 @@
     </div>
     <div class="right">
         <div class="navbar">
-            <button onclick="window.location.href='information.html'" class="nav-button active">جزئیات پروفایل</button>
-            <button onclick="window.location.href='profile.html'" class="nav-button">بازگشت به تمرین‌ها</button>
+            <a onclick="window.location.href='{{ route('profile.edit') }}'" class="nav-button active">جزئیات پروفایل</a>
+            <a onclick="window.location.href='{{ route('profile.show') }}'" class="nav-button">بازگشت به تمرین‌ها</a>
         </div>
     </div>
 </div>
