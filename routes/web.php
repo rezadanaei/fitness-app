@@ -10,4 +10,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/profile', ProfileController::class);
+Route::resource('/profile', ProfileController::class)->middleware('auth');
