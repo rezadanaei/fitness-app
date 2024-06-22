@@ -1,0 +1,165 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font/dist/font-face.css');
+
+body {
+    font-family: 'Vazir', Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('assets/TBG.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.form-container h1 {
+    font-size: 50px; 
+    margin-top: 0; 
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.logo {
+    position: fixed; 
+    top: 20px;
+    left: 20px;
+    width: 150px; 
+    height: auto; 
+    cursor: pointer; 
+}
+
+.logo:hover {
+    opacity: 0.8; 
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    text-align: center;
+}
+
+.form-container.register {
+    transform: translateY(-250px) translateX(-100px);
+}
+
+.form-container.login {
+    transform: translateY(-300px) translateX(-100px); 
+}
+
+.form-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form-header button {
+    background: #fff; 
+    border: 2px solid #ccc; 
+    border-radius: 20px; 
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border 0.3s; 
+    margin: 0 5px; 
+}
+
+.form-header button.active {
+    background: #D96426; 
+    color: #fff; 
+    border-color: #D96426; 
+}
+
+.form-header button[data-role="teacher"] {
+    margin-right: 300px;
+}
+
+.form-header button[data-role="student"] {
+    margin-left: 300px; 
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+p a {
+    color: #D96426;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+    transition: border-bottom 0.3s;
+}
+
+form input:focus {
+    border-bottom: 2px solid #D96426;
+    outline: none;
+}
+
+form button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: linear-gradient(to right, #f5af19, #f12711);
+}
+
+body.teacher {
+    background: url('assets/TBG.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.student {
+    background: url('assets/SBG.png') no-repeat center center fixed;
+    background-size: cover;
+}
