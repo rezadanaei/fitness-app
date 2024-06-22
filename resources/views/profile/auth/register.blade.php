@@ -11,7 +11,7 @@
                     @csrf
                     <div class="form-header">
                         <label>
-                            <input type="radio" name="role" value="teacher" checked> مربی
+                            <input type="radio" name="role" value="coach" checked> مربی
                         </label>
                         <label>
                             <input type="radio" name="role" value="student"> شاگرد
