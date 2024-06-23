@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
@@ -21,14 +24,16 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers {
+        register as registration;
+    }
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/profile';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -77,5 +82,15 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         return view('profile.auth.register');
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $this->create($request->all());
+
+        Alert::success('ثبت‌نام موفق', 'شما با موفقیت ثبت‌نام شدید. لطفا وارد شوید.');
+
+        return redirect('/login');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/profile';
 
     /**
      * Create a new controller instance.
@@ -41,5 +42,11 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('profile.auth.login');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        alert()->success('ورود موفق','شما با موفقیت وارد شدید.');
+        return redirect($this->redirectTo);
     }
 }

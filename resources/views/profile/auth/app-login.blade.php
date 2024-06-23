@@ -9,4 +9,5 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font/dist/font-face.css">
 </head>
 @yield('content')
+@include('sweetalert::alert')
 </html>
