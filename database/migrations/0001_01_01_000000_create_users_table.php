@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role', ['student', 'coach']);
+            $table->boolean('is_admin')->default(0);
             $table->string('phone')->nullable();
             $table->string('kodemeli')->nullable();
             $table->float('weight')->nullable();
