@@ -64,3 +64,70 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Setting Up the Project
+After cloning the project, navigate to the project folder and follow the steps below:
+
+1. Install PHP Dependencies
+First, install the PHP dependencies using Composer:
+
+bash
+Copy
+Edit
+composer install
+2. Install JavaScript Dependencies
+To install JavaScript dependencies, run the following command:
+
+bash
+Copy
+Edit
+npm install
+3. Set Up the .env File
+To set up the project, you need to configure your .env file. Copy the .env.example file and rename it to .env:
+
+bash
+Copy
+Edit
+cp .env.example .env
+Then, set the necessary environment variables like DB_CONNECTION, APP_KEY, and other configurations.
+
+4. Generate Application Key
+To generate the application key, run:
+
+bash
+Copy
+Edit
+php artisan key:generate
+5. Database Migrations
+To create the database tables, run:
+
+bash
+Copy
+Edit
+php artisan migrate
+6. Set Up Storage Symbolic Link
+Since uploaded files are stored in the public directory of the storage folder, you need to create a symbolic link to make them accessible. Run the following command:
+
+bash
+Copy
+Edit
+php artisan storage:link
+This command will create a symbolic link from public/storage to storage/app/public, allowing you to access the uploaded files through the public URL.
+
+7. Run the Project
+Once everything is set up, you can start the development server by running:
+
+bash
+Copy
+Edit
+php artisan serve
+After running this command, you can access the project in your browser at http://localhost:8000.
+
+Additional Notes
+If you are using Windows, be sure to use XAMPP or WAMP to run PHP.
+You can test the API using tools like Postman or Insomnia.
+rust
+Copy
+Edit
+
+This updated section includes instructions for setting up the symbolic link for storage, so uploaded files are properly linked and accessible.
