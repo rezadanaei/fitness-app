@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="/homestyles/Hstyles.css">
 @extends('layouts.app')
-
+@include('home.layout.header')
 @section('content')
-    <div class="container py-4">
+<body style="background-image:url('{{asset('homestyles/assets/Background.jpg')}}');padding-top: 50px;">
+    <div  class="container py-4">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         @foreach($videos as $video)
     <div class="col">
@@ -19,10 +21,13 @@
 
         </div>
     </div>
+</body>
+    
 @endsection
 
 @push('styles')
     <style>
+        
         .video-container {
             position: relative;
             padding-top: 56.25%; 

@@ -23,7 +23,8 @@ class ProfileController extends Controller
 
     $userExercises = \App\Models\UserExercise::where('user_id', $user->id)->first();
 
-    $exercisesStatus = $userExercises->exercises;
+    $exercisesStatus = $userExercises?->exercises ?? [];
+
 
     return view('profile.show', compact('user', 'trainingPrograms', 'exercisesStatus'));
 }
