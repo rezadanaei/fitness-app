@@ -9,7 +9,7 @@
     <nav>
         <ul>
             <li><a href="#about-us">ارتباط با ما</a></li>
-            <li><a href="#">آموزش</a></li>
+            <li><a href="{{asset('videos')}}">آموزش</a></li>
             <li><a href="#trainersT">لیست مربی ها</a></li>
             <li><a href="/">خانه</a></li>
         </ul>

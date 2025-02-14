@@ -9,12 +9,25 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+    // public function show()
+    // {
+    //     $user = Auth::user();
+    //     $trainingPrograms = TrainingProgram::where('student_id', $user->id)->orderBy('date', 'desc')->get();
+    //     return view('profile.show', compact('user', 'trainingPrograms'));
+    // }
     public function show()
-    {
-        $user = Auth::user();
-        $trainingPrograms = TrainingProgram::where('student_id', $user->id)->orderBy('date', 'desc')->get();
-        return view('profile.show', compact('user', 'trainingPrograms'));
-    }
+{
+    $user = Auth::user();
+
+    $trainingPrograms = TrainingProgram::where('student_id', $user->id)->orderBy('date', 'desc')->get();
+
+    $userExercises = \App\Models\UserExercise::where('user_id', $user->id)->first();
+
+    $exercisesStatus = $userExercises->exercises;
+
+    return view('profile.show', compact('user', 'trainingPrograms', 'exercisesStatus'));
+}
+
 
     public function edit()
     {
